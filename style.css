@@ -1,0 +1,192 @@
+:root{
+    --primary-color: #33282E;
+    --secondry-color: #171616;
+    max-height: 100vh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--secondry-color);
+}
+nav{
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 3.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.search-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("img/rain_1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s linear;
+    width: 100vw;
+    height: 20rem;
+}
+.tagline, .serach-container{
+    margin: .5rem;
+    color: white;
+}
+.serach-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: .6em;
+}
+.serach-container .search-box{
+    width: 10rem;
+    text-align: left;
+    border: none;
+    outline: none;
+    border-radius: 1em;
+    padding: .5rem;
+}
+.serach-container .search-icon{
+    width: 2rem;
+    border-radius: 1rem;
+    padding: .5rem;
+    background-color: rgb(19, 19, 160);
+}
+.search-result{
+    color: white;
+    padding: 1rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.search-result .city-card{
+    width: 20rem;
+    height: 25rem;
+    border-radius: 2rem;
+    background-image: linear-gradient(to bottom, rgba(27, 27, 178, 0.6), rgb(85, 14, 133));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .9rem;
+    gap: 1rem;
+}
+.featured-cities{
+    width: 100%;
+    height: auto;
+    color: white;
+    margin: 1rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.featured-cities .feature-heading{
+    margin-bottom: 2rem;
+}
+
+.featured-cities .feature-heading .underline{
+    position: relative;
+    border-radius: 4rem;
+    bottom: .1rem;
+    left: 0;
+    width: 70%;
+    height: .4rem;
+    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.691), rgba(94, 0, 128, 0.706), red);
+}
+.cities-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    align-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+.city-card{
+    width: 80%;
+    border-radius: 2rem;
+    background-image: linear-gradient(to bottom, rgba(27, 27, 178, 0.6), rgb(85, 14, 133));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .9rem;
+    gap: 1rem;
+}
+.city-card .top{
+    color: white;
+    width: 6rem;
+    height: auto;
+    text-align: center;
+    align-content: center;
+}
+.city-card .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.city-card .bottom .upperSide{
+    margin: .5rem;
+}
+.city-card .bottom .downSide{
+    margin: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.city-card .bottom .downSide .temp, .wind-speed, .humidity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    width: 100vw;
+    height: 4.5rem;
+    color: white;
+}
+.footer .link{
+    margin: .4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .link img{
+    width: 2rem;
+}
+.footer .link a{
+    margin-left: 1em;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .search-result .city-card{
+        width: 22rem;
+        height: 25rem;
+        border-radius: 2rem;
+        background-image: linear-gradient(to bottom, rgba(27, 27, 178, 0.6), rgb(85, 14, 133));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: .9rem;
+        gap: 1rem;
+    }
+}
