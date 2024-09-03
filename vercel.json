@@ -8,8 +8,8 @@
     ],
     "routes": [
       {
-        "src": "server.js",
-        "dest": "index.html"
+        "source": "server.js",
+        "destination": "/api/apikey/WeatherAPI_KEY"
       }
     ]
   }
