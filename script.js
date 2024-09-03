@@ -8,7 +8,7 @@ const iconObj = {
 // Fetching the api key
 async function getAPIKEY() {
     try{
-        const response = await fetch("http://localhost:3000/api/apikey");
+        const response = await fetch(`http://localhost:3000/api/apikey/WeatherAPI_KEY`);
         if(!response.ok){
             throw new Error("Failed  to retrive the api key....");
         }
