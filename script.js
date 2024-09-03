@@ -1,6 +1,3 @@
-import background from './background.js'
-background();
-
 // image icons object
 const iconObj = {
     wind: "img/windspeed_icon.svg",
