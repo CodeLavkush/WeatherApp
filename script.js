@@ -1,6 +1,41 @@
+// image icons object
+const iconObj = {
+    wind: "img/windspeed_icon.svg",
+    temp: "img/tempreture_icon.svg",
+    humidity: "img/humidity_icon.svg"
+}
 
-// getting the api key
-const API_KEY = "3bac92471883fbe40bf7f0f9fd292068";
+// Fetching the api key
+async function getAPIKEY() {
+    try{
+        const response = await fetch("http://localhost:3000/api/apikey");
+        if(!response.ok){
+            throw new Error("Failed  to retrive the api key....");
+        }
+        const apikey = await response.json();
+        return apikey.key;
+    }
+    catch(error){
+        console.error(error);
+    }
+}
+
+// Fetching the weather data
+async function getWeatherData(apikey, cityname){
+    try{
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname.toLowerCase()}&appid=${apikey}`);
+        
+        if(!response.ok){
+            throw new Error("Failed to Fetch data!");
+        }
+        
+        return await response.json();;
+    }
+    catch(error){
+        console.error(error);
+    }
+}
+
 
 // getting the search button and calling the event
 let searchBtn = document.querySelector(".search-icon");
@@ -14,15 +49,11 @@ searchBtn.addEventListener('click',()=>{
     getCityWeather(searchBox.value);
 })
 
-// images icon object
-const iconObj = {
-    wind: "img/windspeed_icon.svg",
-    temp: "img/tempreture_icon.svg",
-    humidity: "img/humidity_icon.svg"
-}
 
-// search city fuction
+
+// search by city function
 async function getCityWeather(cityname) {
+    let API_KEY = await getAPIKEY();
     let searchResult = document.querySelector(".search-result");
     let data = await getWeatherData(API_KEY, cityname);
     let id = await weatherId(cityname);
@@ -53,25 +84,10 @@ async function getCityWeather(cityname) {
     searchResult.innerHTML = cityCard;
 }
 
-// getting the weather data
-async function getWeatherData(apikey, cityname){
-    try{
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname.toLowerCase()}&appid=${apikey}`);
-        
-        if(!response.ok){
-            throw new Error("Failed to Fetch data!");
-        }
-        
-        return await response.json();;
-    }
-    catch(error){
-        console.error(error);
-    }
-}
 
-// creating featured cards
+// function for creating weather cards
 async function cardCreation(cityname) {
-
+    let API_KEY = await getAPIKEY();
     let citiesLists = document.querySelector(".cities-list");
     let data = await getWeatherData(API_KEY, cityname);
     let id = await weatherId(cityname);
@@ -104,6 +120,7 @@ async function cardCreation(cityname) {
 
 // weather id handing
 let weatherId = async (cityname)=>{
+    let API_KEY = await getAPIKEY();
     let data = await getWeatherData(API_KEY, cityname);
     let condition = data.weather[0].main;
     if(condition === "thuderstrom"){

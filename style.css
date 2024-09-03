@@ -103,7 +103,7 @@ nav{
     left: 0;
     width: 70%;
     height: .4rem;
-    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.691), rgba(94, 0, 128, 0.706), red);
+    background-image: linear-gradient(to right, rgb(182, 11, 11), rgb(3, 3, 186), rgb(87, 11, 114));
 }
 .cities-list{
     display: grid;
