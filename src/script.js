@@ -1,8 +1,8 @@
 // image icons object
 const iconObj = {
-    wind: "img/windspeed_icon.svg",
-    temp: "img/tempreture_icon.svg",
-    humidity: "img/humidity_icon.svg"
+    wind: "./public/img/windspeed_icon.svg",
+    temp: "./public/img/tempreture_icon.svg",
+    humidity: "./public/img/humidity_icon.svg"
 }
 
 // Fetching the api key
