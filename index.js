@@ -5,7 +5,7 @@ const cors = require('cors'); // Add cors for cross-origin requests
 dotenv.config(); // Load environment variables from .env
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 app.use(cors()); // Enable CORS
 
