@@ -21,8 +21,8 @@ app.get('/script.js', (req, res) => {
 app.get('/background.js', (req, res) => {
     res.sendFile("./background.js", { root: __dirname });
 });
-app.get('/img', (req, res) => {
-    res.sendFile("img/github.svg", { root: __dirname });
+app.get('img/github.svg', (req, res) => {
+    res.sendFile("./img/github.svg", { root: __dirname });
 });
 
 
