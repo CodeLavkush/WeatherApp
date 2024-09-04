@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(cors()); // Enable CORS
 
 app.get('/', (req, res) => {
-    res.status(200).sendFile("../index.html");
+    res.status(200).sendFile("../index.html", { root: __dirname });
 });
 
 app.get('/api/apikey/WeatherAPI_KEY', (req, res) => {
