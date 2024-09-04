@@ -5,14 +5,14 @@ const cors = require('cors'); // Add cors for cross-origin requests
 dotenv.config(); // Load environment variables from .env
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
 
 app.use(express.static('public'))
 
 app.use(cors()); // Enable CORS
 
 app.get('/', (req, res) => {
-    res.status(200).render("../index.html", { root: __dirname });
+    res.sendFile("../index.html", { root: __dirname });
 });
 
 app.get('/api/apikey/WeatherAPI_KEY', (req, res) => {
