@@ -7,8 +7,6 @@ dotenv.config(); // Load environment variables from .env
 const app = express();
 const port = process.env.PORT || 10000;
 
-app.use(express.static('public'))
-
 app.use(cors()); // Enable CORS
 
 app.get('/', (req, res) => {
