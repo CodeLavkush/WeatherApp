@@ -1,4 +1,4 @@
-let bgArr = ["./public/img/rain_1.gif","./public/img/rain_2.gif","./public/img/rain_3.gif","./public/img/rain_4.gif","./public/img/rain_5.gif","./public/img/rain_6.gif"]
+let bgArr = ["./img/rain_1.gif","./img/rain_2.gif","./img/rain_3.gif","./img/rain_4.gif","./img/rain_5.gif","./img/rain_6.gif"]
 
 let currentIndex = 0;
 
