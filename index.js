@@ -21,10 +21,40 @@ app.get('/script.js', (req, res) => {
 app.get('/background.js', (req, res) => {
     res.sendFile("./background.js", { root: __dirname });
 });
+
 app.get('/img/github.svg', (req, res) => {
     res.sendFile("./img/github.svg", { root: __dirname });
 });
-
+app.get('/img/humidity_icon.svg', (req, res) => {
+    res.sendFile("./img/humidity_icon.svg", { root: __dirname });
+});
+app.get('/img/rain_1.gif', (req, res) => {
+    res.sendFile("./img/rain_1.gif", { root: __dirname });
+});
+app.get('/img/rain_2.gif', (req, res) => {
+    res.sendFile("./img/rain_2.gif", { root: __dirname });
+});
+app.get('/img/rain_3.gif', (req, res) => {
+    res.sendFile("./img/rain_3.gif", { root: __dirname });
+});
+app.get('/img/rain_4.gif', (req, res) => {
+    res.sendFile("./img/rain_4.gif", { root: __dirname });
+});
+app.get('/img/rain_5.gif', (req, res) => {
+    res.sendFile("./img/rain_5.gif", { root: __dirname });
+});
+app.get('/img/rain_6.gif', (req, res) => {
+    res.sendFile("./img/rain_6.gif", { root: __dirname });
+});
+app.get('/img/Search_icon.svg', (req, res) => {
+    res.sendFile("./img/Search_icon.svg", { root: __dirname });
+});
+app.get('/img/tempreture_icon.svg', (req, res) => {
+    res.sendFile("./img/tempreture_icon.svg", { root: __dirname });
+});
+app.get('/img/windspeed_icon.svg', (req, res) => {
+    res.sendFile("./img/windspeed_icon.svg", { root: __dirname });
+});
 
 app.get('/api/apikey/WeatherAPI_KEY', (req, res) => {
     res.json({ key: process.env.WEATHER_API_KEY });
