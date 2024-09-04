@@ -12,13 +12,13 @@ app.use(cors()); // Enable CORS
 app.get('/', (req, res) => {
     res.sendFile("./index.html", { root: __dirname });
 });
-app.get('/', (req, res) => {
+app.get('/style.css', (req, res) => {
     res.sendFile("./style.css", { root: __dirname });
 });
-app.get('/', (req, res) => {
+app.get('/script.js', (req, res) => {
     res.sendFile("./script.js", { root: __dirname });
 });
-app.get('/', (req, res) => {
+app.get('/background.js', (req, res) => {
     res.sendFile("./background.js", { root: __dirname });
 });
 
