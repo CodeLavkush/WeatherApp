@@ -22,7 +22,7 @@ app.get('/background.js', (req, res) => {
     res.sendFile("./background.js", { root: __dirname });
 });
 app.get('/img', (req, res) => {
-    res.sendFile("./img", { root: __dirname });
+    res.sendFile("img/github.svg", { root: __dirname });
 });
 
 
