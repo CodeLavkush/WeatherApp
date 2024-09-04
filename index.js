@@ -12,6 +12,16 @@ app.use(cors()); // Enable CORS
 app.get('/', (req, res) => {
     res.sendFile("./index.html", { root: __dirname });
 });
+app.get('/', (req, res) => {
+    res.sendFile("./style.css", { root: __dirname });
+});
+app.get('/', (req, res) => {
+    res.sendFile("./script.js", { root: __dirname });
+});
+app.get('/', (req, res) => {
+    res.sendFile("./background.js", { root: __dirname });
+});
+
 
 app.get('/api/apikey/WeatherAPI_KEY', (req, res) => {
     res.json({ key: process.env.WEATHER_API_KEY });
