@@ -21,6 +21,9 @@ app.get('/script.js', (req, res) => {
 app.get('/background.js', (req, res) => {
     res.sendFile("./background.js", { root: __dirname });
 });
+app.get('/img', (req, res) => {
+    res.sendFile("./img", { root: __dirname });
+});
 
 
 app.get('/api/apikey/WeatherAPI_KEY', (req, res) => {
