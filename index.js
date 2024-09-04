@@ -12,7 +12,7 @@ app.use(express.static('public'))
 app.use(cors()); // Enable CORS
 
 app.get('/', (req, res) => {
-    res.sendFile("../index.html", { root: __dirname });
+    res.sendFile("/index", { root: __dirname });
 });
 
 app.get('/api/apikey/WeatherAPI_KEY', (req, res) => {
