@@ -1,14 +1,14 @@
 // image icons object
 const iconObj = {
-    wind: "./public/img/windspeed_icon.svg",
-    temp: "./public/img/tempreture_icon.svg",
-    humidity: "./public/img/humidity_icon.svg"
+    wind: "./img/windspeed_icon.svg",
+    temp: "./img/tempreture_icon.svg",
+    humidity: "./img/humidity_icon.svg"
 }
 
 // Fetching the api key
 async function getAPIKEY() {
     try{
-        const response = await fetch(`http://localhost:10000/api/apikey/WeatherAPI_KEY`);
+        const response = await fetch(`http://weatherapp-gk5w.onrender.com/api/apikey/WeatherAPI_KEY`);
         if(!response.ok){
             throw new Error("Failed  to retrive the api key....");
         }
