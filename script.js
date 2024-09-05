@@ -4,7 +4,7 @@ const iconObj = {
     temp: "./img/tempreture_icon.svg",
     humidity: "./img/humidity_icon.svg"
 }
-
+console.log(process.env.WEATHER_API_KEY);
 // Fetching the api key
 async function getAPIKEY() {
     try{
