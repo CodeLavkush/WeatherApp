@@ -4,20 +4,10 @@ const iconObj = {
     temp: "./img/tempreture_icon.svg",
     humidity: "./img/humidity_icon.svg"
 }
-console.log(process.env.WEATHER_API_KEY);
+
 // Fetching the api key
 async function getAPIKEY() {
-    try{
-        const response = await fetch(`https://weatherapp-gk5w.onrender.com/api/apikey/WeatherAPI_KEY`);
-        if(!response.ok){
-            throw new Error("Failed  to retrive the api key....");
-        }
-        const apikey = await response.json();
-        return apikey.key;
-    }
-    catch(error){
-        console.error(error);
-    }
+    return "3bac92471883fbe40bf7f0f9fd292068"
 }
 
 // Fetching the weather data
