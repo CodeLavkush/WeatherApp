@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require(path.join(__dirname, "routes/home")))
 
-app.post('/api/getApiKey', (req, res) => {
+app.get('/api/getApiKey', (req, res) => {
   res.json(process.env.APIKEY);
 });
 
