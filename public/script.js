@@ -8,7 +8,7 @@ const iconObj = {
 // Fetching the api key
 async function getAPIKEY() {
     try{
-        const response = await fetch("http://localhost:10000/api/apikey/WEATHERAPIKEY")
+        const response = await fetch("https://weatherapp-s3yu.onrender.com/api/getApiKey");
 
         if(!response.ok){
             throw new Error("Failed to get api key...");

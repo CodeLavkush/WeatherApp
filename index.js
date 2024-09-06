@@ -11,9 +11,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require(path.join(__dirname, "routes/home")))
 
-app.get('/api/apikey/WEATHERAPIKEY',(req, res)=>{
-  res.json(process.env.APIKEY)
-})
+app.post('/api/getApiKey', (req, res) => {
+  res.json(process.env.APIKEY);
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
