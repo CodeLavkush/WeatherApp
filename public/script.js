@@ -1,13 +1,24 @@
 // image icons object
 const iconObj = {
-    wind: "./img/windspeed_icon.svg",
-    temp: "./img/tempreture_icon.svg",
-    humidity: "./img/humidity_icon.svg"
+    wind: "/img/windspeed_icon.svg",
+    temp: "/img/tempreture_icon.svg",
+    humidity: "/img/humidity_icon.svg"
 }
 
 // Fetching the api key
 async function getAPIKEY() {
-    return "3bac92471883fbe40bf7f0f9fd292068"
+    try{
+        const response = await fetch("http://localhost:10000/api/apikey/WEATHERAPIKEY")
+
+        if(!response.ok){
+            throw new Error("Failed to get api key...");
+        }
+
+        return response.json()
+    }
+    catch(error){
+        console.error(error);
+    }
 }
 
 // Fetching the weather data
