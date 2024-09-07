@@ -5,32 +5,13 @@ const iconObj = {
     humidity: "/img/humidity_icon.svg"
 }
 
-// Fetching the api key
-async function getAPIKEY() {
-    try{
-        const response = await fetch("https://weatherapp-s3yu.onrender.com/api/getApiKey");
-
-        if(!response.ok){
-            throw new Error("Failed to get api key...");
-        }
-
-        return response.json()
-    }
-    catch(error){
-        console.error(error);
-    }
-}
-
 // Fetching the weather data
-async function getWeatherData(apikey, cityname){
+async function getWeatherData(cityname){
     try{
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname.toLowerCase()}&appid=${apikey}`);
-        
-        if(!response.ok){
-            throw new Error("Failed to Fetch data!");
-        }
-        
-        return await response.json();;
+        const response = await fetch(`http://localhost:10000/api/getWeatherData/${cityname}`);
+
+        let data = await response.json()
+        return await data;
     }
     catch(error){
         console.error(error);
@@ -54,11 +35,9 @@ searchBtn.addEventListener('click',()=>{
 
 // search by city function
 async function getCityWeather(cityname) {
-    let API_KEY = await getAPIKEY();
     let searchResult = document.querySelector(".search-result");
-    let data = await getWeatherData(API_KEY, cityname);
+    let data = await getWeatherData(cityname);
     let id = await weatherId(cityname);
-
     let cityCard = `<div class="city-card">
                 <div class="top">
                     <img src="https://openweathermap.org/img/wn/${id}@2x.png" alt="weathericon">
@@ -88,9 +67,8 @@ async function getCityWeather(cityname) {
 
 // function for creating weather cards
 async function cardCreation(cityname) {
-    let API_KEY = await getAPIKEY();
     let citiesLists = document.querySelector(".cities-list");
-    let data = await getWeatherData(API_KEY, cityname);
+    let data = await getWeatherData(cityname);
     let id = await weatherId(cityname);
 
     let cityCard = `<div class="city-card">
@@ -121,8 +99,7 @@ async function cardCreation(cityname) {
 
 // weather id handing
 let weatherId = async (cityname)=>{
-    let API_KEY = await getAPIKEY();
-    let data = await getWeatherData(API_KEY, cityname);
+    let data = await getWeatherData(cityname);
     let condition = data.weather[0].main;
     if(condition === "thuderstrom"){
         return data.weather[0].icon;
