@@ -8,7 +8,7 @@ const iconObj = {
 // Fetching the weather data
 async function getWeatherData(cityname){
     try{
-        const response = await fetch(`http://localhost:10000/api/getWeatherData/${cityname}`);
+        const response = await fetch(`https://weathercheckerapp.onrender.com/api/getWeatherData/${cityname}`);
 
         let data = await response.json()
         return await data;
