@@ -1,1 +1,1 @@
-It is my first weather application :)
+### Weather Checker App
