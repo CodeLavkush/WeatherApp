@@ -1,9 +1,9 @@
-const express = require("express");
-const path = require("path");
+import express from 'express';
+
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render(path.join(__dirname, "../views/index.ejs"));
+  res.render("../views/index.ejs");
 });
 
-module.exports = router;
+export default router;

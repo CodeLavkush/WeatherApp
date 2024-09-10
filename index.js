@@ -1,13 +1,14 @@
-const express = require('express')
-const path = require('path')
+import express from 'express';
+import dotenv from 'dotenv';
+import home from './routes/home.js';
+
 const app = express()
 const port = 10000
-const dotenv = require('dotenv');
 dotenv.config();
 
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', require(path.join(__dirname, "routes/home")))
+app.use(express.static('public'));
+app.use('/', home);
 
 
 app.get('/api/getWeatherData/:slug', async (req, res) => {
