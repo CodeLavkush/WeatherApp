@@ -129,7 +129,7 @@ function getTemp(kalvin){
     return Math.floor(kalvin - 273.15);
 }
 
-let citiesNames = ["delhi","maharashtra","mumbai","goa","bangalore","rajasthan", "uttarpradesh","westbengal"]
+let citiesNames = ["delhi","maharashtra","mumbai","goa","bangalore","rajasthan", "uttar pradesh","west bengal"]
 
 for(let i = 0; i < citiesNames.length; i++){
     cardCreation(citiesNames[i]);
